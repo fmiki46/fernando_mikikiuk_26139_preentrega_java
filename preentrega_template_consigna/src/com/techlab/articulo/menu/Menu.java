@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public abstract class Menu {
 
+
     protected Scanner scanner;
 
-        @scanner
 
     public Menu(Scanner scanner) {
         this.scanner = scanner;
@@ -16,11 +16,11 @@ public abstract class Menu {
 
     public abstract void mostrarMenu();
 
-    @scanner mensaje
-    @return
 
-    public abstract void ejecutar(
+    public abstract void ejecutar();
 
+    
+    protected int leerEntero(String mensaje) {
         while (true) {
             try {
                 System.out.print(mensaje);
@@ -29,9 +29,9 @@ public abstract class Menu {
                 System.out.println("Error: debe ingresar un número entero válido.");
             }
         }
-    );
+    }
 
-  
+
     protected double leerDouble(String mensaje) {
         while (true) {
             try {
@@ -42,10 +42,13 @@ public abstract class Menu {
             }
         }
     }
+
+
     protected String leerTexto(String mensaje) {
         System.out.print(mensaje);
         return scanner.nextLine();
     }
+
     protected boolean leerSiNo(String mensaje) {
         while (true) {
             System.out.print(mensaje);
